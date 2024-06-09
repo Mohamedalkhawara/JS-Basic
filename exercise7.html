@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing box color on click</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: yellow; 
+            box-shadow: black 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) =>{
+            const colors = [ '#fff' ,'yellow', 'blue', 'green', 'red', 'pink'];
+            let currentColorIndex = 0;
+
+            function changeBackgroundColor() {
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+                document.getElementById('mydiv').style.backgroundColor = colors[currentColorIndex];
+            }
+
+            document.getElementById('mydiv').addEventListener('click', changeBackgroundColor);
+        });
+    </script>
+</head>
+<body>
+<div id="mydiv"></div>
+</body>
+</html>

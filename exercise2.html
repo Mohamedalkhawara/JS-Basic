@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #3: Changing images</title>
+    <style>
+        #flag {
+            width: 60rem;
+            height: 30rem;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function changeFlag() {
+            var country = document.getElementById("countrySelect").value;
+            var flagImage = document.getElementById("flag");
+
+            if (country === "jordan") {
+                flagImage.src = "images/jordan.jpeg";
+            } else if (country === "palestain") {
+                flagImage.src = "images/images.jpeg"; 
+            } else if (country === "lebanoon") {
+                flagImage.src = "images/lebanoon.jpg"; 
+            } else if (country === "iraq") {
+                flagImage.src = "images/iraq.png"; 
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <select style="width: 20rem; height: 3rem; font-size: 2rem;" id="countrySelect" onchange="changeFlag()">
+        <option value="jordan">Jordan</option>
+        <option value="palestain">Palestain</option>
+        <option value="lebanoon">Lebanoon</option>
+        <option value="iraq">Iraq</option>
+    </select>
+    <br><br>
+    <img id="flag" src="images/jordan.jpeg" alt="Flag">
+</body>
+
+</html>
